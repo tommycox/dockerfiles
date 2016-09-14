@@ -5,7 +5,7 @@ echo "run-tests.sh | Starting run-tests.sh..."
 
 if [ ! -d /var/aegir/tests ]; then
   echo "run-tests.sh | /var/aegir/tests not found.  Cloning... "
-  git clone https://github.com/aegir-project/tests.git /var/aegir/tests
+  git clone https://github.com/tommycox/tests.git /var/aegir/tests
 fi
 
 cd /var/aegir/tests
