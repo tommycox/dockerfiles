@@ -3,9 +3,9 @@ language: generic
 sudo: required
 
 # Only run test when committing to a master branch.
-#branches:
-#  only:
-#    - master
+branches:
+  only:
+    - master
 
 env:
   globaL:
