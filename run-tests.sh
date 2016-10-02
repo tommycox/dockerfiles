@@ -11,10 +11,10 @@ fi
 cd /var/aegir/tests
 
 echo "run-tests.sh | Running composer update..."
-sudo composer update
+composer update
 
 echo "run-tests.sh | Running composer install..."
-sudo composer install
+composer install
 
 echo "run-tests.sh | Running bin/behat..."
 bin/behat
