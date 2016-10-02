@@ -1,6 +1,6 @@
 
 # The "own" tag is custom built so that the aegir user matches the desired UID, typically from the host.
 # See 'prepare.sh'
-FROM aegir/hostmaster:own
+FROM tommycox/hostmaster:own
 VOLUME /var/aegir
 USER aegir

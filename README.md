@@ -15,7 +15,7 @@ How to use this image
 ## Manual launch:
 
     $ docker run --name database -d -e MYSQL_ROOT_PASSWORD=12345 mariadb 
-    $ docker run --name hostmaster --hostname aegir.local.computer -e MYSQL_ROOT_PASSWORD=12345 --link database:mysql -p 80:80 aegir/hostmaster
+    $ docker run --name hostmaster --hostname aegir.local.computer -e MYSQL_ROOT_PASSWORD=12345 --link database:mysql -p 80:80 tommycox/hostmaster
     
 ## docker-compose launch:
 
@@ -26,7 +26,7 @@ How to use this image
     services:
     
       hostmaster:
-        image: aegir/hostmaster
+        image: tommycox/hostmaster
         ports:
           - 80:80
         hostname: local.computer
@@ -118,7 +118,7 @@ This image will also make contributing and testing much, much easier.
 
   If you made your own changes to the dockerfile, you can build your own image:
 
-    docker build -t aegir/hostmaster -f Dockerfile.ubuntu.14.04 .
+    docker build -t tommycox/hostmaster -f Dockerfile.ubuntu.14.04 .
 
 4. Run docker compose up.
 
@@ -161,7 +161,7 @@ It can be confusing and monotonous to build the image, docker compose up, kill, 
 
  So I use the following command to ensure fully deleted containers and volumes, a rebuilt image, and a quick exit if things fail (--abort-on-container-exit)
 
-    docker-compose kill ; docker-compose rm -vf ; docker build -t aegir/hostmaster ../ ; docker-compose up --abort-on-container-exit
+    docker-compose kill ; docker-compose rm -vf ; docker build -t tommycox/hostmaster ../ ; docker-compose up --abort-on-container-exit
 
 You only need to run this full command if you change the Dockerfile or the docker-entrypoint-*.sh files.
 
@@ -197,5 +197,5 @@ Turns out, this results in a REALLY fast Aegir server!
   UPDATES: 
     - If we keep the database as a second container, then hostmaster must always be installed at runtime, because the DB doesn't even exist until then.
     - If we want to release Aegir as a self-contained product, we should think about figuring out how to include everything in one container.  See Rancher Server as an example of this: their container includes a MySQL server: https://github.com/rancher/rancher/tree/master/server
-2. Publish to http://hub.docker.com. DONE: https://hub.docker.com/r/aegir/hostmaster/
+2. Publish to http://hub.docker.com. DONE: https://hub.docker.com/r/tommycox/hostmaster/
 3. Create multiple tagged versions for various OSes, PHP versions, and Aegir releases.

@@ -4,7 +4,7 @@ services:
 
   hostmaster:
 
-    image: aegir/hostmaster
+    image: tommycox/hostmaster
     ports:
       - 80:80
     hostname: aegir.local.computer
